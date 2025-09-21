@@ -12,7 +12,10 @@ const Navbar = ({ home, collection, about, contact }) => {
 
   return (
     <div className="flex items-center justify-between py-5 font-medium">
-      <h3 className="w-36">Logo</h3>
+      <Link to="/" onClick={() => setActiveMenu("home")}>
+        <h3 className="w-36">Logo</h3>
+      </Link>
+
       <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
         <NavLink
           onClick={() => setActiveMenu("home")}

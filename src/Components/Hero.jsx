@@ -1,7 +1,7 @@
 import React from "react";
 import hero1 from '../../public/hero1.jpeg';
 
-const Hero = () => {
+const Hero = ({ourBestSellers, latestArrivals, shopNow}) => {
   return (
     <div className="flex flex-col sm:flex-row border border-gray-400">
       {/* hero left side */}
@@ -10,13 +10,13 @@ const Hero = () => {
         <div className="text-[#414141]">
           <div className="flex items-center gap-2">
             <p className="w-8 md:w-11 h-[2px] bg-[#414141]"></p>
-            <p>OUR BEST SELLERS</p>
+            <p>{ourBestSellers}</p>
           </div>
           <h1 className=" prata-regular text-3xl sm:py-3 lg:text-5xl leading-relaxed">
-            Latest Arrivals
+            {latestArrivals}
           </h1>
           <div className="flex items-center gap-2">
-            <p className="font-semibold text-sm md:text-base">SHOP NOW</p>
+            <p className="font-semibold text-sm md:text-base">{shopNow}</p>
             <p className="w-8 md:w-11 h-[1px] bg-[#414141]"></p>
           </div>
         </div>
