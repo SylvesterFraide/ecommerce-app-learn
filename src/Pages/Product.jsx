@@ -24,39 +24,40 @@ import GraphicLooseFitTshirt2 from "../assets/PRODUCTS/GraphicLooseFitTshirt2.we
 import GraphicLooseFitTshirt3 from "../assets/PRODUCTS/GraphicLooseFitTshirt3.webp";
 import OversizedStagGraphicTshirt1 from "../assets/PRODUCTS/OversizedStagGraphicTshirt1.webp";
 import OversizedStagGraphicTshirt2 from "../assets/PRODUCTS/OversizedStagGraphicTshirt2.webp";
-import OversizedStagGraphicTshirt3 from "../assets/PRODUCTS/OversizedStagGraphicTshirt3.webp";
+import OversizedStagGraphicTshirt3 from "../assets/PRODUCTS/OversizedStagGraphicTshirt13.webp";
 import BrownBlendKnitRelaxedFitShirt1 from "../assets/PRODUCTS/BrownBlendKnitRelaxedFitShirt1.webp";
 import BrownBlendKnitRelaxedFitShirt2 from "../assets/PRODUCTS/BrownBlendKnitRelaxedFitShirt2.webp";
 import BrownBlendKnitRelaxedFitShirt3 from "../assets/PRODUCTS/BrownBlendKnitRelaxedFitShirt3.webp";
 import BlueCottonBlendSolidLower1 from "../assets/PRODUCTS/BlueCottonBlendSolidLower1.webp";
-import BlueCottonBlendSolidLower2 from "../assets/PRODUCTS/BlueCottonBlendSolidLower2.webp";
+import BlueCottonBlendSolidLower2 from "../assets/PRODUCTS/BlueCottonBlendSolidLower2.jpeg";
 import BlueCottonBlendSolidLower3 from "../assets/PRODUCTS/BlueCottonBlendSolidLower3.webp";
 import BrownCottonLinenRelaxedFitLower1 from "../assets/PRODUCTS/BrownCottonLinenRelaxedFitLower1.webp";
-import BrownCottonLinenRelaxedFitLower2 from "../assets/PRODUCTS/BrownCottonLinenRelaxedFitLower2.webp";
+import BrownCottonLinenRelaxedFitLower2 from "../assets/PRODUCTS/BrownCottonLinenRelaxedFitLower2.jpeg";
 import BrownCottonLinenRelaxedFitLower3 from "../assets/PRODUCTS/BrownCottonLinenRelaxedFitLower3.webp";
 import StretchableLightBlueCottonJean1 from "../assets/PRODUCTS/StretchableLightBlueCottonJean1.webp";
 import StretchableLightBlueCottonJean2 from "../assets/PRODUCTS/StretchableLightBlueCottonJean2.webp";
 import StretchableLightBlueCottonJean3 from "../assets/PRODUCTS/StretchableLightBlueCottonJean3.webp";
 
 // kids wear
-import CottonCorduroyJogger1 from "../assets/PRODUCTS CottonCorduroyJogger1.jpeg";
-import CottonCorduroyJogger2 from "../assets/PRODUCTS CottonCorduroyJogger2.jpeg";
-import CottonCorduroyJogger3 from "../assets/PRODUCTS CottonCorduroyJogger3.jpeg";
+import CottonCorduroyJogger1 from "../assets/PRODUCTS/CottonCorduroyJogger1.jpeg";
+import CottonCorduroyJogger2 from "../assets/PRODUCTS/CottonCorduroyJogger2.jpeg";
+import CottonCorduroyJogger3 from "../assets/PRODUCTS/CottonCorduroyJogger3.webp";
 import StraightLegJeans1 from '../assets/PRODUCTS/StraightLegJeans1.jpg';
 import StraightLegJeans2 from '../assets/PRODUCTS/StraightLegJeans2.jpg';
 import StraightLegJeans3 from '../assets/PRODUCTS/StraightLegJeans3.jpg';
 import TaperedFitJeans1 from '../assets/PRODUCTS/TaperedFitJeans1.jpg';
 import TaperedFitJeans2 from '../assets/PRODUCTS/TaperedFitJeans2.jpg';
 import TaperedFitJeans3 from '../assets/PRODUCTS/TaperedFitJeans3.jpg';
-import SlimFitLongSleevedTop1 from  '.../assets/PRODUCTS/SlimFitLongSleevedTop1.jpg';
-import SlimFitLongSleevedTop2 from  '.../assets/PRODUCTS/SlimFitLongSleevedTop2.jpg';
-import SlimFitLongSleevedTop3 from  '.../assets/PRODUCTS/SlimFitLongSleevedTop3.jpg';
-import cottonLongSleevedTop1 from '../assets/PRODUCTScottonLongSleevedTop1.jpg';
-import cottonLongSleevedTop2 from '../assets/PRODUCTScottonLongSleevedTo2.jpg';
-import cottonLongSleevedTop3 from '../assets/PRODUCTScottonLongSleevedTop3.jpg';
+import SlimFitLongSleevedTop1 from  '../assets/PRODUCTS/SlimFitLongSleevedTop1.jpg';
+import SlimFitLongSleevedTop2 from  '../assets/PRODUCTS/SlimFitLongSleevedTop2.jpg';
+import SlimFitLongSleevedTop3 from  '../assets/PRODUCTS/SlimFitLongSleevedTop3.jpg';
+import cottonLongSleevedTop1 from '../assets/PRODUCTS/cottonLongSleevedTop1.jpg';
+import cottonLongSleevedTop2 from '../assets/PRODUCTS/cottonLongSleevedTop2.jpg';
+import cottonLongSleevedTop3 from '../assets/PRODUCTS/cottonLongSleevedTop3.jpg';
 import helloKittyTshirt1 from '../assets/PRODUCTS/helloKittyTshirt1.jpg';
 import helloKittyTshirt2 from '../assets/PRODUCTS/helloKittyTshirt2.jpg';
 import helloKittyTshirt3 from '../assets/PRODUCTS/helloKittyTshirt3.jpg';
+
 export const product = [
   {
     id: 1,
