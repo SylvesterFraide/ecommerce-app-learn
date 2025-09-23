@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "../Components/Hero";
 import LatestCollection from "../Components/LatestCollection";
+import BestSaller from "../Components/BestSaller";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
         shopNow="SHOP NOW"
       />
       <LatestCollection />
+      <BestSaller />
     </div>
   );
 };

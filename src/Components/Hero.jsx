@@ -1,5 +1,5 @@
 import React from "react";
-import hero1 from '../../public/hero1.jpeg';
+import hero1 from '/hero1.jpeg';
 
 const Hero = ({ourBestSellers, latestArrivals, shopNow}) => {
   return (
