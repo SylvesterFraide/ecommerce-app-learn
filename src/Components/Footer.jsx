@@ -40,6 +40,15 @@ const Footer = () => {
           </ul>
         </div>
       </div>
+
+      {/* <div className="border-t border-gray-200 py-10 text-center text-sm">
+        <p>© 2025 Your Company. All rights reserved.</p>
+      </div> */}
+
+      <div>
+        <hr />
+       <p className="text-center text-sm py-5"> © 2025 Your Company. All rights reserved.</p>
+      </div>
     </div>
   );
 };
