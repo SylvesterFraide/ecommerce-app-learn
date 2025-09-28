@@ -27,14 +27,24 @@ const Collection = () => {
     }
   };
 
-  useEffect(() => {
-    console.log(category);
-    console.log(subcategory);
-  }, [category, subcategory]);
+  const applyFilter = () => {
+    let productCopy = product.slice();
+    if (category.length > 0) {
+      productCopy = productCopy.filter((item) => category.includes(item.category));
+    }
+    if (subcategory.length > 0) {
+      productCopy = productCopy.filter((item) => subcategory.includes(item.subcategory));
+    }
+    setFilterProducts(productCopy);
+  }
 
   useEffect(() => {
     setFilterProducts(product);
   }, []);
+
+  useEffect(() => {
+    applyFilter();
+  }, [category, subcategory]);
 
   return (
     <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-1 border-gray-400 rounded">
@@ -97,12 +107,12 @@ const Collection = () => {
           <p className="mb-3 text-sm font-medium">TYPE</p>
           <div className="flex flex-col gap-2 text-sm font-light text-gray-700">
             <p className="flex gap-2">
-              <input type="checkbox" value={"Top Wear"} className="w-3" onChange={toggleSubcategory} />
-              Topwear
+              <input type="checkbox" value={"TopWear"} className="w-3" onChange={toggleSubcategory} />
+              TopWear
             </p>
             <p className="flex gap-2">
-              <input type="checkbox" value={"Bottom Wear"} className="w-3" onChange={toggleSubcategory} />
-              Bottomwear
+              <input type="checkbox" value={"BottomWear"} className="w-3" onChange={toggleSubcategory} />
+              BottomWear
             </p>
             {/* <p className="flex gap-2">
               <input type="checkbox" value={"Kids"} className="w-3" onChange={toggleSubcategory} />
