@@ -8,24 +8,48 @@ const Collection = () => {
   const { product } = useContext(ShopContext);
   const [showFilters, setShowFilters] = useState(false);
   const [filterProducts, setFilterProducts] = useState([]);
+  const [category, setCategory] = useState([]);
+  const [subcategory, setSubcategory] = useState([]);
+
+  const toggleCategory = (e) => {
+    if (category.includes(e.target.value)) {
+      setCategory((prev) => prev.filter((item) => item !== e.target.value));
+    } else {
+      setCategory((prev) => [...prev, e.target.value]);
+    }
+  };
+
+  const toggleSubcategory = (e) => {
+    if (subcategory.includes(e.target.value)) {
+      setSubcategory((prev) => prev.filter((item) => item !== e.target.value));
+    } else {
+      setSubcategory((prev) => [...prev, e.target.value]);
+    }
+  };
+
+  useEffect(() => {
+    console.log(category);
+    console.log(subcategory);
+  }, [category, subcategory]);
 
   useEffect(() => {
     setFilterProducts(product);
-  },[])
+  }, []);
 
   return (
     <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-1 border-gray-400 rounded">
       {/* filter options*/}
       <div className="min-w-60">
-        <p
-          onClick={() => setShowFilters(!showFilters)}
-          className="my-2 text-xl flex items-center cursor-pointer gap-2"
-        >
-          FILTERS
-          <div className={`sm:hidden ${showFilters ? "rotate-90" : ""}`}>
-            <KeyboardArrowRightIcon />
-          </div>
-        </p>
+          <p
+            onClick={() => setShowFilters(!showFilters)}
+            className="my-2 text-xl flex items-center cursor-pointer gap-2"
+          >
+            FILTERS
+            <span className={`sm:hidden ${showFilters ? "rotate-90" : ""}`}>
+              <KeyboardArrowRightIcon />
+            </span>
+          </p>
+
         {/* category filter */}
         <div
           className={`border border-gray-300 pl-5 py-3 mt-6 ${
@@ -35,15 +59,30 @@ const Collection = () => {
           <p className="mb-3 text-sm font-medium">CATEGORY</p>
           <div className="flex flex-col gap-2 text-sm font-light text-gray-700">
             <p className="flex gap-2">
-              <input type="checkbox" value={"Men"} className="w-3" />
+              <input
+                type="checkbox"
+                value={"Men"}
+                className="w-3"
+                onChange={toggleCategory}
+              />
               Men
             </p>
             <p className="flex gap-2">
-              <input type="checkbox" value={"Women"} className="w-3" />
+              <input
+                type="checkbox"
+                value={"Women"}
+                className="w-3"
+                onChange={toggleCategory}
+              />
               Women
             </p>
             <p className="flex gap-2">
-              <input type="checkbox" value={"Kids"} className="w-3" />
+              <input
+                type="checkbox"
+                value={"Kids"}
+                className="w-3"
+                onChange={toggleCategory}
+              />
               Kids
             </p>
           </div>
@@ -58,15 +97,15 @@ const Collection = () => {
           <p className="mb-3 text-sm font-medium">TYPE</p>
           <div className="flex flex-col gap-2 text-sm font-light text-gray-700">
             <p className="flex gap-2">
-              <input type="checkbox" value={"Top Wear"} className="w-3" />
+              <input type="checkbox" value={"Top Wear"} className="w-3" onChange={toggleSubcategory} />
               Topwear
             </p>
             <p className="flex gap-2">
-              <input type="checkbox" value={"Bottom Wear"} className="w-3" />
+              <input type="checkbox" value={"Bottom Wear"} className="w-3" onChange={toggleSubcategory} />
               Bottomwear
             </p>
             {/* <p className="flex gap-2">
-              <input type="checkbox" value={"Kids"} className="w-3" />
+              <input type="checkbox" value={"Kids"} className="w-3" onChange={toggleSubcategory} />
               Kids
             </p> */}
           </div>
@@ -87,7 +126,13 @@ const Collection = () => {
         {/* map all products */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 gap-y-6">
           {filterProducts.map((item, index) => (
-            <ProductItem key={index} name={item.name} id={item.id} price={item.price} image={item.image}  />
+            <ProductItem
+              key={index}
+              name={item.name}
+              id={item.id}
+              price={item.price}
+              image={item.image}
+            />
           ))}
         </div>
       </div>
