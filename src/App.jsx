@@ -11,6 +11,7 @@ import PlaceOrder from "./Pages/PlaceOrder";
 import Orders from "./Pages/Orders";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import Searchbar from "./Components/Searchbar";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         about="ABOUT"
         contact="CONTACT"
       />
+      <Searchbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/collection" element={<Collection />} />
