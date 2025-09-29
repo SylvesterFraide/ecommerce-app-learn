@@ -10,6 +10,7 @@ const Collection = () => {
   const [filterProducts, setFilterProducts] = useState([]);
   const [category, setCategory] = useState([]);
   const [subcategory, setSubcategory] = useState([]);
+  const [sortType, setSortType] = useState("relevant");
 
   const toggleCategory = (e) => {
     if (category.includes(e.target.value)) {
@@ -30,35 +31,60 @@ const Collection = () => {
   const applyFilter = () => {
     let productCopy = product.slice();
     if (category.length > 0) {
-      productCopy = productCopy.filter((item) => category.includes(item.category));
+      productCopy = productCopy.filter((item) =>
+        category.includes(item.category)
+      );
     }
     if (subcategory.length > 0) {
-      productCopy = productCopy.filter((item) => subcategory.includes(item.subcategory));
+      productCopy = productCopy.filter((item) =>
+        subcategory.includes(item.subcategory)
+      );
     }
     setFilterProducts(productCopy);
-  }
+  };
 
-  useEffect(() => {
-    setFilterProducts(product);
-  }, []);
+  const sortProducts = () => {
+    let filterProductsCopy = filterProducts.slice();
+    switch (sortType) {
+      case "low-high":
+        setFilterProducts(filterProductsCopy.sort((a, b) => a.price - b.price));
+        break;
+
+      case "high-low":
+        setFilterProducts(filterProductsCopy.sort((a, b) => b.price - a.price));
+        break;
+
+      default:
+        applyFilter();
+        break;
+    }
+  };
+
+  // useEffect(() => {
+  //   setFilterProducts(product);
+  // }, []);
 
   useEffect(() => {
     applyFilter();
   }, [category, subcategory]);
 
+  useEffect(() => {
+    sortProducts();
+  }, [sortType]);
+
   return (
     <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-1 border-gray-400 rounded">
       {/* filter options*/}
       <div className="min-w-60">
-          <p
-            onClick={() => setShowFilters(!showFilters)}
-            className="my-2 text-xl flex items-center cursor-pointer gap-2"
-          >
-            FILTERS
-            <span className={`sm:hidden ${showFilters ? "rotate-90" : ""}`}>
-              <KeyboardArrowRightIcon />
-            </span>
-          </p>
+        <p
+          onClick={() => setShowFilters(!showFilters)}
+          className="my-2 text-xl flex items-center cursor-pointer gap-2"
+        >
+          FILTERS
+          <span className={`sm:hidden ${showFilters ? "rotate-90" : ""}`}>
+            <KeyboardArrowRightIcon />
+          </span>
+        </p>
 
         {/* category filter */}
         <div
@@ -107,11 +133,21 @@ const Collection = () => {
           <p className="mb-3 text-sm font-medium">TYPE</p>
           <div className="flex flex-col gap-2 text-sm font-light text-gray-700">
             <p className="flex gap-2">
-              <input type="checkbox" value={"TopWear"} className="w-3" onChange={toggleSubcategory} />
+              <input
+                type="checkbox"
+                value={"TopWear"}
+                className="w-3"
+                onChange={toggleSubcategory}
+              />
               TopWear
             </p>
             <p className="flex gap-2">
-              <input type="checkbox" value={"BottomWear"} className="w-3" onChange={toggleSubcategory} />
+              <input
+                type="checkbox"
+                value={"BottomWear"}
+                className="w-3"
+                onChange={toggleSubcategory}
+              />
               BottomWear
             </p>
             {/* <p className="flex gap-2">
@@ -127,7 +163,10 @@ const Collection = () => {
         <div className="flex justify-between text-base sm:text-2xl mb-4">
           <Title text1={"ALL"} text2={"COLLECTIOS"} />
           {/* product sort */}
-          <select className="border-2 border-gray-300 text-sm px-2">
+          <select
+            onChange={(e) => setSortType(e.target.value)}
+            className="border-2 border-gray-300 text-sm px-2"
+          >
             <option value="relevant">Sort by: Relevant</option>
             <option value="low-high">Sort by: Low to High</option>
             <option value="high-low">Sort by: High to Low</option>
