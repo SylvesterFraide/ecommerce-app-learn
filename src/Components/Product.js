@@ -256,7 +256,7 @@ export const product = [
 
   {
     id: 14,
-    name: "STRAIGHT LEG JEANS",
+    name: "Straight Leg Jeans",
     description: "A stylish pair of straight leg jeans for a casual look.",
     price: 30,
     image: [StraightLegJeans1, StraightLegJeans2, StraightLegJeans3],
@@ -268,7 +268,7 @@ export const product = [
 
   {
     id: 15,
-    name: "TAPERED FIT JEANS",
+    name: "Tapered Fit Jeans",
     description: "A stylish pair of tapered fit jeans for a casual look.",
     price: 30,
     image: [TaperedFitJeans1, TaperedFitJeans2, TaperedFitJeans3],
@@ -280,7 +280,7 @@ export const product = [
 
   {
     id: 16,
-    name: "SLIM FIT LONG SLEEVED TOP",
+    name: "Slim Fit Long Sleeved Top",
     description: "A stylish slim fit long sleeved top for a casual look.",
     price: 30,
     image: [
@@ -296,7 +296,7 @@ export const product = [
 
   {
     id: 17,
-    name: "ORGANIC COTTON LONG SLEEVED TOP",
+    name: "Organic Cotton Long Sleeved Top",
     description: "A stylish organic cotton long sleeved top for a casual look.",
     price: 30,
     image: [
@@ -312,7 +312,7 @@ export const product = [
 
   {
     id: 18,
-    name: "HELLO KITTY T-SHIRT",
+    name: "Hello Kitty T-Shirt",
     description: "A stylish Hello Kitty t-shirt for a casual look.",
     price: 30,
     image: [helloKittyTshirt1, helloKittyTshirt2, helloKittyTshirt3],
