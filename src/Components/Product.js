@@ -213,7 +213,6 @@ export const product = [
       BrownCottonLinenRelaxedFitLower1,
       BrownCottonLinenRelaxedFitLower2,
       BrownCottonLinenRelaxedFitLower3,
-      OversizedStagGraphicTshirt3,
     ],
     category: "Men",
     subcategory: "BottomWear",
