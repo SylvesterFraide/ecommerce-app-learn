@@ -3,6 +3,7 @@ import { ShopContext } from "../Context/ShopContext";
 import { useParams } from "react-router-dom";
 import StarIcon from '@mui/icons-material/Star';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
+import RelatedProducts from "../Components/RelatedProducts";
 // import { product } from "../Components/Product";
 
 const Products = () => {
@@ -96,6 +97,9 @@ const Products = () => {
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi nemo totam eligendi, consequatur architecto voluptate ratione velit omnis, ea, sit tenetur aut quas? Aspernatur numquam rem cum possimus. Ipsum, quod.</p>
         </div>
       </div>
+
+      {/* display related products */}
+      <RelatedProducts category={productData.category} subCategory={productData.subCategory} />
     </div>
   ) : (
     <div>Loading...</div>
