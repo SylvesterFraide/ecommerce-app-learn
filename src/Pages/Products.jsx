@@ -7,7 +7,7 @@ import RelatedProducts from "../Components/RelatedProducts";
 // import { product } from "../Components/Product";
 
 const Products = () => {
-  const { product, currency } = useContext(ShopContext);
+  const { product, currency, delivery_fee, addToCart } = useContext(ShopContext);
   const { id } = useParams();
 
   const [productData, setProductData] = useState(false);
@@ -18,7 +18,7 @@ const Products = () => {
     product.find((user) => {
       if (user.id === parseInt(id)) {
         setProductData(user);
-        console.log(user);
+        // console.log(user);
         setImage(user.image[0]);
       }
     });
@@ -76,7 +76,7 @@ const Products = () => {
               ))}
             </div>
           </div>
-          <button className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700 rounded">ADD TO CART</button>
+          <button onClick={() => addToCart(productData.id, size)} className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700 rounded">ADD TO CART</button>
            <hr className="mt-8 sm:w-4/5" />
            <div className="text-sm text-gray-500 mt-5 flex flex-col gap-1">
             <p>100% Original Product.</p>
@@ -102,7 +102,9 @@ const Products = () => {
       <RelatedProducts category={productData.category} subCategory={productData.subCategory} />
     </div>
   ) : (
-    <div>Loading...</div>
+    <div>
+      <p className="text-gray-500">Item Not Found</p>
+    </div>
   );
 };
 
