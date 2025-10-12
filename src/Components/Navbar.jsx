@@ -11,7 +11,7 @@ const Navbar = ({ home, collection, about, contact }) => {
   const [activeMenu, setActiveMenu] = useState("home");
   const [visible, setVisible] = useState(false);
 
-  const { setShowSearch } = useContext(ShopContext);
+  const { setShowSearch, getCartCount } = useContext(ShopContext);
 
   return (
     <div className="flex items-center justify-between py-5 font-medium">
@@ -91,7 +91,7 @@ const Navbar = ({ home, collection, about, contact }) => {
         <Link to="/cart" className="relative">
           <ShoppingCartIcon />
           <p className="absolute -top-2 -right-1 bg-red-500 text-white rounded-full text-xs px-1">
-            29
+            {getCartCount()}
           </p>
         </Link>
 
