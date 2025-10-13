@@ -4,7 +4,7 @@ import Title from "../Components/Title";
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
 const Cart = () => {
-  const { product, currency, cartItems } = useContext(ShopContext);
+  const { product, currency, cartItems, updateQuantity } = useContext(ShopContext);
 
   const [cartData, setCartData] = useState([]);
 
@@ -58,14 +58,8 @@ const Cart = () => {
                   </div>
                 </div>
               </div>
-              {/* <div className="flex items-center justify-between">
-                  <p className="text-sm">{item.quantity}</p>
-                <div>
-                  <DeleteOutlineIcon className="cursor-pointer" />
-                </div>
-              </div> */}
-              <input type="number" defaultValue={item.quantity} min={1} className="border rounded border-gray-300 text-gray-500 outline-none max-w-10 sm:max-w-20 px-1 sm:px-2 py-1" />
-              <DeleteOutlineIcon className="cursor-pointer text-gray-500 hover:text-gray-700" />
+              <input type="number" defaultValue={item.quantity} min={1} onChange={(e) => e.target.value === '' || e.target.value === '0' ? null : updateQuantity(item.id, item.Size, parseInt(e.target.value))}  className="border rounded border-gray-300 text-gray-500 outline-none max-w-10 sm:max-w-20 px-1 sm:px-2 py-1" />
+              <DeleteOutlineIcon onClick={() => updateQuantity(item.id, item.Size, 0)} className="cursor-pointer text-gray-500 hover:text-gray-700" />
             </div>
           );
         })}
