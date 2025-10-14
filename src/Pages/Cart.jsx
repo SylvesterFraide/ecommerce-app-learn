@@ -98,6 +98,11 @@ const Cart = () => {
         <div className="flex justify-end my-20">
           <div className="w-full sm:w-[450px]">
             <CartTotal />
+            <div className="w-full text-end">
+              <button className="bg-black text-white text-sm py-3 my-8 px-8 rounded">
+                PROCEED TO CHECKOUT
+              </button>
+            </div>
           </div>
         </div>
       )}
