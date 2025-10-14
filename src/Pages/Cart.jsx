@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../Context/ShopContext";
 import Title from "../Components/Title";
-import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
+import CartTotal from "../Components/CartTotal";
 
 const Cart = () => {
-  const { product, currency, cartItems, updateQuantity } = useContext(ShopContext);
+  const { product, currency, cartItems, updateQuantity } =
+    useContext(ShopContext);
 
   const [cartData, setCartData] = useState([]);
 
@@ -26,9 +28,14 @@ const Cart = () => {
 
   return (
     <div className="pt-5">
-      <div className="text-2xl mb-3">
-        <Title text1={"YOUR"} text2={"CART"} />
-      </div>
+      {cartItems.length === 0 ? (
+        <div> </div>
+      ) : (
+        <div className="text-2xl mb-3">
+          <Title text1={"YOUR"} text2={"CART"} />
+        </div>
+      )}
+
       <div>
         {cartData.map((item, index) => {
           const productData = product.find(
@@ -54,16 +61,46 @@ const Cart = () => {
                       {currency}
                       {productData.price}
                     </p>
-                     <p className="px-2 sm:px-3 sm:py-1  bg-slate-100">{item.Size}</p>
+                    <p className="px-2 sm:px-3 sm:py-1  bg-slate-100">
+                      {item.Size}
+                    </p>
                   </div>
                 </div>
               </div>
-              <input type="number" defaultValue={item.quantity} min={1} onChange={(e) => e.target.value === '' || e.target.value === '0' ? null : updateQuantity(item.id, item.Size, parseInt(e.target.value))}  className="border rounded border-gray-300 text-gray-500 outline-none max-w-10 sm:max-w-20 px-1 sm:px-2 py-1" />
-              <DeleteOutlineIcon onClick={() => updateQuantity(item.id, item.Size, 0)} className="cursor-pointer text-gray-500 hover:text-gray-700" />
+              <input
+                type="number"
+                defaultValue={item.quantity}
+                min={1}
+                onChange={(e) =>
+                  e.target.value === "" || e.target.value === "0"
+                    ? null
+                    : updateQuantity(
+                        item.id,
+                        item.Size,
+                        parseInt(e.target.value)
+                      )
+                }
+                className="border rounded border-gray-300 text-gray-500 outline-none max-w-10 sm:max-w-20 px-1 sm:px-2 py-1"
+              />
+              <DeleteOutlineIcon
+                onClick={() => updateQuantity(item.id, item.Size, 0)}
+                className="cursor-pointer text-gray-500 hover:text-gray-700"
+              />
             </div>
           );
         })}
       </div>
+      {cartItems.length === 0 ? (
+        <div className="text-center py-10">
+          <p className="text-lg">Your cart is empty...</p>
+        </div>
+      ) : (
+        <div className="flex justify-end my-20">
+          <div className="w-full sm:w-[450px]">
+            <CartTotal />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
