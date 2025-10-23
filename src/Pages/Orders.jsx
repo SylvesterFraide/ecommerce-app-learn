@@ -1,8 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ShopContext } from '../Context/ShopContext';
+import Title from '../Components/Title';
 
 const Orders = () => {
-  return (
-    <div>Orders</div>
+ const { product, currency} = useContext(ShopContext);
+
+ return (
+    <div className='border-t pt-16'>
+      <div className="text-2xl">
+        <Title text1={"MY"} text2={"ORDERS"} />
+      </div>
+      <div>
+          {
+            
+          }
+      </div>
+    </div>
   )
 }
 
